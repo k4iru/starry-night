@@ -1,0 +1,18 @@
+{
+  "name": "starry-api",
+  "version": "1.0.0",
+  "description": "node backend for starry night",
+  "main": "index.js",
+  "scripts": {
+    "test": "API backend"
+  },
+  "author": "Kyle Cheung",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.0",
+    "http": "0.0.0",
+    "pg": "^7.11.0",
+    "request": "^2.88.0"
+  }
+}
