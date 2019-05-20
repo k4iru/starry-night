@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/call', (req, res) => {
-    api_helper.make_API_call('https://api.darksky.net/forecast/2811d5105b8558f1f0ec3acbdbfb52cc/49.9415,-79.5134')
+    api_helper.make_API_call(`${darksky}${key}/49.9415,-79.5134`)
         .then(response => {
             res.json(response)
         })
