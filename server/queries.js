@@ -10,7 +10,7 @@ var testObject = {
 const format = data => {
 
     let i;
-    for( i = 0; i <= 7; i++) {
+    for( i = 0; i < data.daily.data.length; i++) {
         testObject.data.push(data.daily.data[i]);
 
     }
@@ -23,6 +23,7 @@ const call = (req, res) => {
     api_helper.make_API_call(`${darksky}${key}/49.9415,-79.5134`)
         .then(response => {
 
+            testObject.data = []
             format(response)
             res.json(testObject)
 
