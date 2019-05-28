@@ -27,11 +27,15 @@ class Search extends React.Component {
                     value={this.props.value} 
                     onChange={this.handleChange}/>
                 <Button 
-                    variant="primary"
+                    className="button"
+                    variant="dark"
                     disabled={isLoading}
                     onClick={!isLoading ? this.handleSubmit : null}
                 >{isLoading ? 
-                        <Spinner animation="border" role="status" /> : 'Search'}
+                        <Spinner 
+                            animation="border" 
+                            role="status"
+                            size="sm" /> : 'Search'}
                     </Button>
                 </div>
         )
