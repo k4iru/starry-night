@@ -2,6 +2,7 @@ import React, { Component, Fragment }from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
+import Popover from 'react-bootstrap/Popover';
 import '../styles/Search.css';
 
 const list = 
@@ -79,7 +80,7 @@ class Search extends React.Component {
         if (this.state.showSuggestions && this.state.userInput) {
             if(this.state.filteredSuggestions.length) {
                 suggestionsListComponent = (
-                    <ul class="suggestions">
+                    <ul className="suggestions">
                         {this.state.filteredSuggestions.map((suggestion, index) => {
                             let className;
 
@@ -89,7 +90,7 @@ class Search extends React.Component {
 
                             return (
                                 <li 
-                                    className={className}
+                                    className="suggestion-item"
                                     key={suggestion}
                                     onClick={this.onClick}
                                 >
@@ -111,7 +112,7 @@ class Search extends React.Component {
         return (
             <div>
             <Fragment>
-                <input
+                <input className="search-field"
                     type="text"
                     onChange={this.onChange}
                     value={this.state.userInput}
