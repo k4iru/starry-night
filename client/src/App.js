@@ -92,6 +92,12 @@ class App extends React.Component {
                         isLoading={this.state.isLoading}
                     />
                 </Container>
+
+                <Container className="second-view">
+                    <div>
+                        <p>test</p>
+                    </div>
+                </Container>
             </div>
         );
     }
