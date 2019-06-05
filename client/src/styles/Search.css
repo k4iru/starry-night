@@ -32,20 +32,32 @@
     right: 15vw;
     padding: 0px;
     list-style: none;
-    background-color: black;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .suggestion-item {
-    height: 100%;
+    padding: 2px;
+    text-align: left;
+    height: 24px;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
 .suggestion-item:hover{
-    background-color: red;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
 }
 
-.no-suggestion {
+.no-suggestions {
+    text-align: left;
+    background-color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 15vw;
+    right: 15vw;
+
 }

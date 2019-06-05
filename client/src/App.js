@@ -87,7 +87,6 @@ class App extends React.Component {
                 <Container className="first-view">
                     <div className="spacer" />
                     <Search 
-                        value={this.state.search} 
                         onSearchChange={this.searchHandler} 
                         onSubmitChange={this.submitHandler}
                         isLoading={this.state.isLoading}

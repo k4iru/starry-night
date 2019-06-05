@@ -33,13 +33,15 @@ class Search extends React.Component {
             userInput: ""
         };
 
-        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onChange = this.onChange.bind(this);
         this.onClick = this.onClick.bind(this);
+        this._onFocus = this._onFocus.bind(this);
+        this._onBlur = this._onBlur.bind(this);
     }
 
     onChange(e) {
+        this.props.onSearchChange(e.currentTarget.value);
         const suggestions = list;
         const userInput = e.currentTarget.value;
 
@@ -56,6 +58,7 @@ class Search extends React.Component {
     };
 
     onClick(e) {
+        this.props.onSearchChange(e.currentTarget.innerText);
         this.setState({
             activeSuggestion: 0,
             filteredSuggestions: [],
@@ -64,8 +67,22 @@ class Search extends React.Component {
         });
     }
 
-    handleChange(e) {
-        this.props.onSearchChange(e.target.value);
+    _onFocus() {
+        if (!this.state.showSuggestions) {
+            this.setState({
+                showSuggestions: true
+            });
+        }
+    }
+
+    _onBlur() {
+        setTimeout(() => {
+            if (this.state.showSuggestions) {
+                this.setState({
+                    showSuggestions: false
+                });
+            }
+        }, 0);
     }
 
     handleSubmit(e) {
@@ -97,7 +114,7 @@ class Search extends React.Component {
                                     {suggestion}
                                 </li>
                             );
-                        })};
+                        })}
                     </ul>
                 );
             } else {
@@ -110,20 +127,17 @@ class Search extends React.Component {
         }
 
         return (
-            <div>
+            <div id="search-form">
             <Fragment>
                 <input className="search-field"
                     type="text"
                     onChange={this.onChange}
                     value={this.state.userInput}
+                    onFocus={this._onFocus}
+                    onBlur={this._onBlur}
                 />
                 {suggestionsListComponent}
             </Fragment>
-            <div id="search-form">
-                <input className="search-field"
-                    type="text" 
-                    value={this.props.value} 
-                    onChange={this.handleChange}/>
                 <Button 
                     className="button"
                     variant="dark"
@@ -135,7 +149,6 @@ class Search extends React.Component {
                             role="status"
                             size="sm" /> : 'Search'}
                     </Button>
-                </div>
             </div>
         )
     }
