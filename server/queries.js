@@ -7,6 +7,11 @@ var testObject = {
     "data": []
 };
 
+const reserves = {
+    "Torrance Barrens": "/49.9415,-79.5134",
+    "McDonald Park": "/49.0504,-122.3045"
+}
+
 const format = data => {
 
     let i;
@@ -20,7 +25,10 @@ const root = (req, res) => {
 }
 
 const call = (req, res) => {
-    api_helper.make_API_call(`${darksky}${key}/49.9415,-79.5134`)
+    var loc = req.query.location;
+    console.log(loc);
+    console.log(reserves[loc]);
+    api_helper.make_API_call(`${darksky}${key}${reserves[loc]}`)
         .then(response => {
 
             testObject.data = []
