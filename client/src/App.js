@@ -7,11 +7,10 @@ import Container from 'react-bootstrap/Container';
 import './App.css';
 
 
-function simulateAPICall() {
-    return new Promise(resolve => setTimeout(resolve, 2000));
-}
-
 class App extends React.Component {
+
+    messagesEnd = React.createRef();
+
     constructor(props) {
         super(props);
         this.state = {
@@ -31,50 +30,31 @@ class App extends React.Component {
 
     submitHandler(e) {
         this.setState({isLoading: true}, () => {
-            simulateAPICall().then(() => {
-                this.setState({ isLoading: false });
-            })
+            console.log(this.state.search);
+            fetch(`/call?location=${this.state.search}` )
+                .then(res => res.json())
+                .then(
+                    (json) => {
+                        this.setState({
+                            response: json.data
+                        });
+                        console.log("testing fetch api");
+                        console.log(this.state.response);
+                    },
+                    (err) => {
+                        Error(err)
+                    }
+                )
+                .then(() => {
+                    this.setState({ isLoading: false });
+                    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+                })
         });
-
-        /*
-        fetch("/call")
-            .then(res => res.json())
-            .then(
-                (json) => {
-                    this.setState({ 
-                        response: json.data
-                    });
-                    console.log(this.state.response);
-                    console.log("test");
-                },
-                (err) => {
-                    Error(err)
-                }
-          
-         ) */
-        console.log("test");
-        console.log(this.state.search);
         e.preventDefault();
 
     }
 
     componentDidMount() {
-        /*
-        fetch("/call")
-            .then(res => res.json())
-            .then(
-                (json) => {
-                    this.setState({ 
-                        response: json.data
-                    });
-                    console.log(this.state.response);
-                    console.log("test");
-                },
-                (err) => {
-                    Error(err)
-                }
-            )
-            */
     }
 
     componentWillUnmount() {
@@ -95,7 +75,7 @@ class App extends React.Component {
 
                 <Container className="second-view">
                     <div>
-                        <p>test</p>
+                        <p ref={(el) => {this.messagesEnd = el; }} >test</p>
                     </div>
                 </Container>
             </div>

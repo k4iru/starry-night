@@ -7,11 +7,12 @@ import '../styles/Search.css';
 
 const list = 
     [
-        "Torrance Barrens",
+        "Torrance Barrens Dark Sky Preserve",
         "McDonald Park",
         "Cypress Hills Inter-Provincial Park",
         "Point Pelee National Park",
-        "Beaver Hills and Elk Island National Park"]
+        "Beaver Hills Dark Sky Preserve"
+    ]
 
 class Search extends React.Component {
 
