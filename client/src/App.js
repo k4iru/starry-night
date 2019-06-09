@@ -9,6 +9,7 @@ import './App.css';
 
 class App extends React.Component {
 
+    // reference for smooth scrolling
     messagesEnd = React.createRef();
 
     constructor(props) {
@@ -23,12 +24,19 @@ class App extends React.Component {
     }
 
     searchHandler(e) {
+
+        // update search field as input is typed 
         this.setState({
             search: e
         })
     }
 
     submitHandler(e) {
+        //
+        // Search Button has been clicked, set loading to true and perform 
+        // api call. parse data and smooth scroll to results
+        //
+
         this.setState({isLoading: true}, () => {
             console.log(this.state.search);
             fetch(`/call?location=${this.state.search}` )
@@ -47,9 +55,14 @@ class App extends React.Component {
                 )
                 .then(() => {
                     this.setState({ isLoading: false });
-                    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+                    // only scroll down if search isn't empty 
+                    if (this.state.search) {
+                        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+                    }
                 })
         });
+
+        // prevent the browser from refreshing on search 
         e.preventDefault();
 
     }
