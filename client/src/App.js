@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import Header from './components/Header';
-import Footer from './components/Footer';
+//import logo from './logo.svg';
+//import Header from './components/Header';
+//import Footer from './components/Footer';
+import Forecast from './components/Forecast';
 import Search from './components/Search';
 import Container from 'react-bootstrap/Container';
 import './App.css';
@@ -88,8 +89,9 @@ class App extends React.Component {
 
                 <Container className="second-view">
                     <div>
-                        <p ref={(el) => {this.messagesEnd = el; }} >test</p>
+                        <p ref={(el) => {this.messagesEnd = el; }} >w</p>
                     </div>
+                    <Forecast value={3}/>
                 </Container>
             </div>
         );
