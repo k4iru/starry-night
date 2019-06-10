@@ -7,4 +7,21 @@
 
 .weekday {
     text-align: center;
+    border-style: solid;
+    border-color: green;
+}
+
+.moon-row {
+    margin: auto;
+}
+
+.visibility-row {
+    margin: auto;
+}
+
+.cloud-row {
+    margin: auto;
+}
+
+.title {
 }

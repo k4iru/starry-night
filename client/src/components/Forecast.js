@@ -22,24 +22,24 @@ function Forecast({value}) {
                     <h1>{convertDate(value.time)}</h1>
                 </Col>
             </Row>
-            <Row>
-                <Col>
+            <Row className="moon-row">
+                <Col className="title">
                     <p>Moon Phase</p>
                 </Col>
                 <Col>
                     {value.moonPhase}
                 </Col>
             </Row>
-            <Row>
-                <Col>
+            <Row className="visibility-row">
+                <Col className="title">
                     <p>Visibility</p>
                 </Col>
                 <Col>
                     {value.visibility}
                 </Col>
             </Row>
-            <Row>
-                <Col>
+            <Row className="cloud-row">
+                <Col className="title">
                     <p>Cloud Cover</p>
                 </Col>
                 <Col>
