@@ -75,6 +75,18 @@ class App extends React.Component {
     }
 
     render() {
+        let forecast;
+        if (this.state.response !== null){
+            forecast = (
+                <div className="flex-container">
+                    <Forecast value={this.state.response[0]} />
+                    <Forecast value={this.state.response[1]} />
+                    <Forecast value={this.state.response[2]} />
+                    <Forecast value={this.state.response[3]} />
+                    <Forecast value={this.state.response[4]} />
+                </div>
+            )
+        }
         return (
             <div className="App">
                 {/* first view */}
@@ -88,10 +100,8 @@ class App extends React.Component {
                 </Container>
 
                 <Container className="second-view">
-                    <div>
-                        <p ref={(el) => {this.messagesEnd = el; }} >w</p>
-                    </div>
-                    <Forecast value={3}/>
+                    <div ref={(el) => {this.messagesEnd = el; }} ></div>
+                    {forecast}
                 </Container>
             </div>
         );

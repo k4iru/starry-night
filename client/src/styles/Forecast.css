@@ -1,2 +1,10 @@
 .forecast {
+    background: red;
+    padding: 0;
+    margin: auto;
+    line-height: 0.9em;
+}
+
+.weekday {
+    text-align: center;
 }

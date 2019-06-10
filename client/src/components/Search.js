@@ -129,16 +129,16 @@ class Search extends React.Component {
 
         return (
             <div id="search-form">
-            <Fragment>
-                <input className="search-field"
-                    type="text"
-                    onChange={this.onChange}
-                    value={this.state.userInput}
-                    onFocus={this._onFocus}
-                    onBlur={this._onBlur}
-                />
-                {suggestionsListComponent}
-            </Fragment>
+                <Fragment>
+                    <input className="search-field"
+                        type="text"
+                        onChange={this.onChange}
+                        value={this.state.userInput}
+                        onFocus={this._onFocus}
+                        onBlur={this._onBlur}
+                    />
+                    {suggestionsListComponent}
+                </Fragment>
                 <Button 
                     className="button"
                     variant="dark"
@@ -150,7 +150,7 @@ class Search extends React.Component {
                             role="status"
                             size="sm" /> : 'Search'}
                     </Button>
-            </div>
+                </div>
         )
     }
 };
