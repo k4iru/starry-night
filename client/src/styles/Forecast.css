@@ -1,27 +1,71 @@
+td {
+    height: 30px;
+    width: 150px;
+
+}
+
+tr {
+    width: 100%;
+    margin: auto;
+}
+
+th {
+    padding: 0;
+    margin: 0;
+}
+
 .forecast {
-    background: red;
+    color: white;
+    table-layout: fixed; 
+    background-color: rgba(0,0,0,0.3);
     padding: 0;
     margin: auto;
-    line-height: 0.9em;
+    height: 18vh;
+    width: 80vw;
 }
 
 .weekday {
+    text-transform: capitalize;
+    padding: 4px;
     text-align: center;
-    border-style: solid;
-    border-color: green;
+    width: 100%;
 }
 
-.moon-row {
-    margin: auto;
+.day {
+    width: 100%;
+    font-size: 2em;
 }
 
-.visibility-row {
-    margin: auto;
-}
-
-.cloud-row {
-    margin: auto;
+.poor {
+    width: 50%;
+    background-color: green;
+    vertical-align: middle;
 }
 
 .title {
 }
+
+.center-text {
+    text-align: center;
+}
+
+.peak {
+    background-color: #00C805;
+}
+
+.good {
+    background-color: #359603;
+}
+
+.okay {
+    background-color: #6A6402;
+}
+
+.poor {
+    background-color: #9F3201;
+}
+
+.bad {
+    background-color: #DF0000;
+}
+

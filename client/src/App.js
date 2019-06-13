@@ -78,12 +78,14 @@ class App extends React.Component {
         let forecast;
         if (this.state.response !== null){
             forecast = (
+
                 <div className="flex-container">
+
+                    <h1 className="searched">{this.state.search}</h1>
                     <Forecast value={this.state.response[0]} />
                     <Forecast value={this.state.response[1]} />
                     <Forecast value={this.state.response[2]} />
                     <Forecast value={this.state.response[3]} />
-                    <Forecast value={this.state.response[4]} />
                 </div>
             )
         }

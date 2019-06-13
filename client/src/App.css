@@ -27,10 +27,17 @@
 }
 
 .flex-container {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.searched {
+    font-size: 2em;
+    color: white;
+    text-align: center;
 }
 /* 
  *  768w for tablet, 1024 for desktop
