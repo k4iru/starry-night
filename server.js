@@ -3,9 +3,10 @@ const express = require('express');
 const request = require('request');
 const bodyParser = require('body-parser');
 const cors = require('cors')
-const app = express();
 const port = process.env.PORT || 5010;
 const db = require('./queries');
+const path = require('path');
+const app = express();
 
 // Routes
 
