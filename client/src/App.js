@@ -85,7 +85,6 @@ class App extends React.Component {
                     <Forecast value={this.state.response[0]} />
                     <Forecast value={this.state.response[1]} />
                     <Forecast value={this.state.response[2]} />
-                    <Forecast value={this.state.response[3]} />
                 </div>
             )
         }
