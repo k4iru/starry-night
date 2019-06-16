@@ -14,7 +14,7 @@ app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', db.root)
+//app.get('/', db.root)
 
 app.get('/call', db.call)
 
