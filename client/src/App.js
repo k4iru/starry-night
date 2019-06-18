@@ -71,12 +71,15 @@ class App extends React.Component {
         if (this.state.response !== null){
             forecast = (
 
-                <div className="flex-container">
+                <div className="second-view">
+                    <div ref={(el) => {this.messagesEnd = el; }} />
+                    <div className="flex-container">
 
-                    <h1 className="searched">{this.state.search}</h1>
-                    <Forecast value={this.state.response[0]} />
-                    <Forecast value={this.state.response[1]} />
-                    <Forecast value={this.state.response[2]} />
+                        <h1 className="searched">{this.state.search}</h1>
+                        <Forecast value={this.state.response[0]} />
+                        <Forecast value={this.state.response[1]} />
+                        <Forecast value={this.state.response[2]} />
+                    </div>
                 </div>
             )
         }
@@ -92,10 +95,7 @@ class App extends React.Component {
                     />
                 </div>
 
-                <div className="second-view">
-                    <div ref={(el) => {this.messagesEnd = el; }} ></div>
                     {forecast}
-                </div>
             </div>
         );
     }

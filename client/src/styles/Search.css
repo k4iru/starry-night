@@ -28,36 +28,27 @@
 .suggestions {
     z-index: 999;
     position: absolute;
-    width: 90vw;
-    margin: auto;
+    width: 85vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
     padding: 0px;
     list-style: none;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    text-align: left;
 }
 
 .suggestion-item {
     padding: 2px;
-    text-align: left;
     height: 24px;
     width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-
 .suggestion-item:hover{
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
 }
 
-.no-suggestions {
-    position: absolute;
-    z-index: 999;
-    text-align: left;
-    width: 90vw;
-    background-color: white;
-    position: relative;
-    margin: auto;
-
-}

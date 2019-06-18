@@ -120,9 +120,9 @@ class Search extends React.Component {
                 );
             } else {
                 suggestionsListComponent = (
-                    <div className="no-suggestions">
-                        <em>No suggestions</em>
-                    </div>
+                    <ul className="suggestions">
+                        <li><em>No suggestions</em></li>
+                    </ul>
                 );
             }
         }
