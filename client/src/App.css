@@ -6,7 +6,6 @@
 .first-view {
 
     height: 100vh;
-    position: relative;
     min-height: 500px;
     width: 100%;
     background: #161415 url('assets/stars.jpg');
@@ -34,7 +33,6 @@
 .second-view {
 
     height: 100vh;
-    position: relative;
     min-height: 500px;
     width: 100%;
     background: #161415 url('assets/second.jpg');
