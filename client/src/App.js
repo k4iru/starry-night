@@ -68,19 +68,18 @@ class App extends React.Component {
 
     render() {
         let forecast;
+        let searchTitle;
         if (this.state.response !== null){
+            searchTitle = this.state.search;
             forecast = (
 
-                <div className="second-view">
-                    <div ref={(el) => {this.messagesEnd = el; }} />
                     <div className="flex-container">
 
-                        <h1 className="searched">{this.state.search}</h1>
+                        <h1 className="searched">{searchTitle}</h1>
                         <Forecast value={this.state.response[0]} />
                         <Forecast value={this.state.response[1]} />
                         <Forecast value={this.state.response[2]} />
                     </div>
-                </div>
             )
         }
         return (
@@ -94,8 +93,11 @@ class App extends React.Component {
                         isLoading={this.state.isLoading}
                     />
                 </div>
-
+                <div className="second-view">
+                    <div ref={(el) => {this.messagesEnd = el; }} />
+ 
                     {forecast}
+                </div>
             </div>
         );
     }

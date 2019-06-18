@@ -5,10 +5,7 @@
 }
 .first-view {
 
-    /*
     height: 100vh;
-    min-height: 500px;
-    width: 100%;
     background: #161415 url('assets/stars.jpg');
     background-size: cover !important;
     -webkit-background-size: cover !important;
@@ -16,14 +13,14 @@
     background-position: center center;
     background-attachment: fixed;
     text-align: center;
-    */
+    /*
     height: 100vh;
     background-image: url('assets/stars.jpg');
     background-size: auto 100%;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+*/
 }
 
 .spacer {
@@ -32,6 +29,7 @@
 
 .second-view {
 
+    position: relative;
     background-image: url('assets/second.jpg');
     background-position: center center;
     background-size: cover;
