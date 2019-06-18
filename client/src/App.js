@@ -1,7 +1,5 @@
 import React from 'react';
 //import logo from './logo.svg';
-//import Header from './components/Header';
-//import Footer from './components/Footer';
 import Forecast from './components/Forecast';
 import Search from './components/Search';
 import Container from 'react-bootstrap/Container';
@@ -68,12 +66,6 @@ class App extends React.Component {
 
     }
 
-    componentDidMount() {
-    }
-
-    componentWillUnmount() {
-    }
-
     render() {
         let forecast;
         if (this.state.response !== null){
@@ -91,19 +83,19 @@ class App extends React.Component {
         return (
             <div className="App">
                 {/* first view */}
-                <Container className="first-view">
+                <div className="first-view">
                     <div className="spacer" />
                     <Search 
                         onSearchChange={this.searchHandler} 
                         onSubmitChange={this.submitHandler}
                         isLoading={this.state.isLoading}
                     />
-                </Container>
+                </div>
 
-                <Container className="second-view">
+                <div className="second-view">
                     <div ref={(el) => {this.messagesEnd = el; }} ></div>
                     {forecast}
-                </Container>
+                </div>
             </div>
         );
     }
