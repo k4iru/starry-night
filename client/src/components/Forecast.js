@@ -30,7 +30,7 @@ function Forecast({value}) {
     if(value.moonPhase <= 0.40 || value.moonPhase >= 0.60) {
         moonStyle = "bad center-text"; moonMessage = "bad";
     }
-    else {moonStyle = "bad"; moonMessage="BAD";
+    else {moonStyle = "bad center-text"; moonMessage="BAD";
     }
 
     if(value.visibility < 0.35) {visStyle = "bad center-text"; visMessage = "BAD";}

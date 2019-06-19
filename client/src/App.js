@@ -3,7 +3,6 @@ import smoothscroll from 'smoothscroll-polyfill';
 //import logo from './logo.svg';
 import Forecast from './components/Forecast';
 import Search from './components/Search';
-import Container from 'react-bootstrap/Container';
 import './App.css';
 
 
@@ -48,9 +47,9 @@ class App extends React.Component {
                         });
                         console.log("testing fetch api");
                         console.log(this.state.response);
-                    },
+                        },
                     (err) => {
-                        Error(err)
+                        Error(err);
                     }
                 )
                 .then(() => {
@@ -71,17 +70,20 @@ class App extends React.Component {
         smoothscroll.polyfill();
         let forecast;
         let searchTitle;
-        if (this.state.response !== null){
+        let popover;
+        if (this.state.response !== undefined && this.state.response !== null){
             searchTitle = this.state.search;
             forecast = (
                 <div className="second-view">
                     <div ref={(el) => {this.messagesEnd = el; }} />
- 
+
                     <div className="flex-container">
 
                         <h1 className="searched">{searchTitle}</h1>
                         <Forecast value={this.state.response[0]} />
+                        <div className="divider" />
                         <Forecast value={this.state.response[1]} />
+                        <div className="divider" />
                         <Forecast value={this.state.response[2]} />
                     </div>
                 </div>
@@ -92,14 +94,18 @@ class App extends React.Component {
                 {/* first view */}
                 <div className="first-view">
                     <div className="spacer" />
-                    <Search 
-                        onSearchChange={this.searchHandler} 
-                        onSubmitChange={this.submitHandler}
-                        isLoading={this.state.isLoading}
-                    />
+                    <h1 className="responsive-header">Starry</h1>
+                    <div className="popup">
+                        {popover}
+                        <Search 
+                            onSearchChange={this.searchHandler} 
+                            onSubmitChange={this.submitHandler}
+                            isLoading={this.state.isLoading}
+                        />
+                    </div>
                 </div>
- 
-                    {forecast}
+
+                {forecast}
             </div>
         );
     }
