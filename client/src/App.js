@@ -1,4 +1,5 @@
 import React from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 //import logo from './logo.svg';
 import Forecast from './components/Forecast';
 import Search from './components/Search';
@@ -67,6 +68,7 @@ class App extends React.Component {
     }
 
     render() {
+        smoothscroll.polyfill();
         let forecast;
         let searchTitle;
         if (this.state.response !== null){

@@ -6,15 +6,22 @@
     -webkit-overflow-scrolling: touch;
     */
 }
+
+@media(min-width:1025px) {
+    .first-few {
+        background-attachment: fixed;
+    }
+
+    .second-view {
+        background-attachment: fixed;
+    }
+}
 .first-view {
 
     height: 100vh;
     background: #161415 url('assets/stars.jpg');
-    background-size: cover !important;
-    -webkit-background-size: cover !important;
     background-size: auto 100%;
     background-position: center center;
-    background-attachment: fixed;
     text-align: center;
     /*
     height: 100vh;
@@ -36,7 +43,6 @@
     background-image: url('assets/second.jpg');
     background-position: center center;
     background-size: cover;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     height: 100vh;
 }
