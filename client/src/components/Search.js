@@ -31,7 +31,7 @@ class Search extends React.Component {
             activeSuggestion: 0,
             filteredSuggestions: [],
             showSuggestions: false,
-            userInput: ""
+            userInput: "Torrance Barrens Dark Sky Preserve"
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,7 +59,9 @@ class Search extends React.Component {
     };
 
     onClick(e) {
-        this.props.onSearchChange(e.currentTarget.innerText);
+        //var textContent = ('textContent' in document) ? 'textContent' : 'innerText';
+        this.props.onSearchChange(e.currentTarget.textContent);
+        console.log(e.currentTarget.textContent);
         this.setState({
             activeSuggestion: 0,
             filteredSuggestions: [],

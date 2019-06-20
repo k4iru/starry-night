@@ -1,6 +1,7 @@
 import React from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
 //import logo from './logo.svg';
+import Header from './components/Header';
 import Forecast from './components/Forecast';
 import Search from './components/Search';
 import './App.css';
@@ -10,12 +11,13 @@ class App extends React.Component {
 
     // reference for smooth scrolling
     messagesEnd = React.createRef();
+    home = React.createRef();
 
     constructor(props) {
         super(props);
         this.state = {
             response: null, 
-            search: '',
+            search: 'Torrance Barrens Dark Sky Preserve',
             isLoading: false
         };
         this.searchHandler = this.searchHandler.bind(this);
@@ -70,7 +72,7 @@ class App extends React.Component {
         smoothscroll.polyfill();
         let forecast;
         let searchTitle;
-        let popover;
+
         if (this.state.response !== undefined && this.state.response !== null){
             searchTitle = this.state.search;
             forecast = (
@@ -93,19 +95,24 @@ class App extends React.Component {
             <div className="App">
                 {/* first view */}
                 <div className="first-view">
+                    <Header />
                     <div className="spacer" />
                     <h1 className="responsive-header">Starry</h1>
-                    <div className="popup">
-                        {popover}
+                    <div className="spacer" />
                         <Search 
                             onSearchChange={this.searchHandler} 
                             onSubmitChange={this.submitHandler}
                             isLoading={this.state.isLoading}
                         />
-                    </div>
                 </div>
 
                 {forecast}
+                <div className="first-view" id="about">
+                    <Header />
+                    <h1 className="responsive-header">Starry</h1>
+                </div>
+
+
             </div>
         );
     }

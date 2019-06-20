@@ -52,3 +52,12 @@
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
 }
 
+@media(min-width: 1025px) {
+    .suggestions {
+        width: 30vw;
+    }
+
+    .search-field {
+        width: 20vw;
+    }
+}
