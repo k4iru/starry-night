@@ -1,9 +1,9 @@
 import React from 'react';
 import smoothscroll from 'smoothscroll-polyfill';
-//import logo from './logo.svg';
 import Header from './components/Header';
 import Forecast from './components/Forecast';
 import Search from './components/Search';
+import Info from './components/Info';
 import './App.css';
 
 
@@ -18,7 +18,8 @@ class App extends React.Component {
         this.state = {
             response: null, 
             search: 'Torrance Barrens Dark Sky Preserve',
-            isLoading: false
+            isLoading: false,
+            loaded: false
         };
         this.searchHandler = this.searchHandler.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
@@ -39,7 +40,7 @@ class App extends React.Component {
         //
 
         this.setState({isLoading: true}, () => {
-            console.log(this.state.search);
+            this.setState({loaded: false});
             fetch(`/call?location=${this.state.search}` )
                 .then(res => res.json())
                 .then(
@@ -47,7 +48,6 @@ class App extends React.Component {
                         this.setState({
                             response: json.data
                         });
-                        console.log("testing fetch api");
                         console.log(this.state.response);
                         },
                     (err) => {
@@ -57,8 +57,9 @@ class App extends React.Component {
                 .then(() => {
                     this.setState({ isLoading: false });
                     // only scroll down if search isn't empty 
-                    if (this.state.search) {
+                    if (this.state.response !== undefined && this.state.response !== null) {
                         this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+                        this.setState({loaded: true});
                     }
                 })
         });
@@ -69,6 +70,8 @@ class App extends React.Component {
     }
 
     render() {
+
+        // polyfill for smoothscroll
         smoothscroll.polyfill();
         let forecast;
         let searchTitle;
@@ -76,12 +79,12 @@ class App extends React.Component {
         if (this.state.response !== undefined && this.state.response !== null){
             searchTitle = this.state.search;
             forecast = (
-                <div className="second-view">
-                    <div ref={(el) => {this.messagesEnd = el; }} />
+                <div className="forecast-view">
+                    <div id="forecast" ref={(el) => {this.messagesEnd = el; }} />
 
                     <div className="flex-container">
 
-                        <h1 className="searched">{searchTitle}</h1>
+                        <h1 className="responsive-header searched">{searchTitle}</h1>
                         <Forecast value={this.state.response[0]} />
                         <div className="divider" />
                         <Forecast value={this.state.response[1]} />
@@ -94,8 +97,8 @@ class App extends React.Component {
         return (
             <div className="App">
                 {/* first view */}
-                <div className="first-view">
-                    <Header />
+                <div className="search-view">
+                    <Header loaded={this.state.loaded} />
                     <div className="spacer" />
                     <h1 className="responsive-header">Starry</h1>
                     <div className="spacer" />
@@ -107,11 +110,12 @@ class App extends React.Component {
                 </div>
 
                 {forecast}
-                <div className="first-view" id="about">
-                    <Header />
-                    <h1 className="responsive-header">Starry</h1>
+                {/* TODO
+                <div className="info-view" id="about">
+                    <h1 className="info">Info</h1>
+                    <Info />
                 </div>
-
+                */}
 
             </div>
         );

@@ -1,7 +1,6 @@
 import React from 'react';
-import '../styles/Header.css';
 
-function Header() {
+function Header(e) {
     return (
         <header id="home">
             <nav id="nav-wrap">
@@ -10,10 +9,9 @@ function Header() {
                 <a className="mobile-btn" href="#home" title="Hide navigation">Hide navigation</a>
 
                 <ul id="nav" className="nav">
-                    <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-                    <li><a className="smoothscroll" href="#about">About</a></li>
-                    <li><a className="smoothscroll" href="#resume">Resume</a></li>
-                    <li><a className="smoothscroll" href="#portfolio">Portfolio</a></li>
+                    <li><a className="smoothscroll" href="#home">Top</a></li>
+            <li><a className={"smoothscroll " + (e.loaded ? "" : " disabled")} href="#forecast">Forecast</a></li>
+                    <li><a className="smoothscroll" href="#about">Info</a></li>
                 </ul>
 
             </nav>
