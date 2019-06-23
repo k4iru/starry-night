@@ -89,7 +89,8 @@
 }
 
 .attribution {
-    width: 80vw;
+    max-width: 80vw;
+    max-height: 300px; 
 }
 
 /* 
