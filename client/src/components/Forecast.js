@@ -21,6 +21,7 @@ function Forecast({value}) {
     let cloudStyle;
     let cloudMessage;
 
+    // if statements are faster than switches
     if(value.moonPhase <= 0.05 || value.moonPhase >= 0.95) {
         moonStyle = "peak center-text"; moonMessage = "PEAK";
     }
@@ -28,7 +29,7 @@ function Forecast({value}) {
         moonStyle = "good center-text"; moonMessage = "good";
     }
     if(value.moonPhase <= 0.40 || value.moonPhase >= 0.60) {
-        moonStyle = "bad center-text"; moonMessage = "bad";
+        moonStyle = "poor center-text"; moonMessage = "poor";
     }
     else {moonStyle = "bad center-text"; moonMessage="BAD";
     }

@@ -11,7 +11,7 @@ function Header(e) {
                 <ul id="nav" className="nav">
                     <li><a className="smoothscroll" href="#home">Top</a></li>
             <li><a className={"smoothscroll " + (e.loaded ? "" : " disabled")} href="#forecast">Forecast</a></li>
-                    <li><a className="smoothscroll" href="#about">Info</a></li>
+                    <li><a className="smoothscroll" href="#about">FAQ</a></li>
                 </ul>
 
             </nav>

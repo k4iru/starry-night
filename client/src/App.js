@@ -5,6 +5,7 @@ import Forecast from './components/Forecast';
 import Search from './components/Search';
 import Info from './components/Info';
 import './App.css';
+import Attribution from './assets/poweredby-darkbackground.png';
 
 
 class App extends React.Component {
@@ -110,13 +111,12 @@ class App extends React.Component {
                 </div>
 
                 {forecast}
-                {/* TODO
                 <div className="info-view" id="about">
-                    <h1 className="info">Info</h1>
+                    <h1 className="info">FAQ</h1>
                     <Info />
+                    <img className="attribution" src={Attribution} />
+                    
                 </div>
-                */}
-
             </div>
         );
     }

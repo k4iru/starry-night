@@ -1,0 +1,32 @@
+.info-table {
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    vertical-align: middle;
+    height: 50px;
+    padding: 8px 0;
+}
+
+.description {
+    vertical-align: text-top;
+    font-size: 0.7em;
+    text-align: left;
+    padding-left: 5px;
+    line-height: 1.1em;
+}
+
+.notes {
+    padding: 10px 0;
+    line-height: 1.2em;
+}
+
+.definition {
+    padding: 10px 0;
+    margin: 0;
+    text-align: left;
+}
