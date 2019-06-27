@@ -112,9 +112,10 @@ class App extends React.Component {
 
                 {forecast}
                 <div className="info-view" id="about">
+                    <div className="info-spacer" />
                     <h1 className="info">FAQ</h1>
                     <Info />
-                    <img className="attribution" src={Attribution} />
+                    <img className="attribution" src={Attribution} alt="attribution to dark sky api"/>
                     
                 </div>
             </div>

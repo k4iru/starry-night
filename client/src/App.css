@@ -16,7 +16,7 @@
 .search-view {
 
     height: 100vh;
-    background: #161415 url('assets/stars.jpg');
+    background: #161415 url('assets/search-bg.jpg');
     background-size: auto 100%;
     background-position: center center;
     text-align: center;
@@ -49,7 +49,7 @@
 .forecast-view {
 
     position: relative;
-    background-image: url('assets/test.jpg');
+    background-image: url('assets/forecast-bg.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -97,13 +97,65 @@
  *  768w for tablet, 1024 for desktop
  */
 
-@media(min-width:1025px) {
-    .search-few {
-        background-attachment: fixed;
-    }
+    @media(min-width:940px) {
 
-    .forecast-view {
-        background-attachment: fixed;
+        .responsive-header {
+            font-size: 3em;
+        }
+
+        table {
+            max-width: 35vw;
+        }
+
+        td {
+            font-size: 1.5em;
+        }
+
+        .divider {
+            max-width: 25vw;
+        }
+
+        .title {
+            padding-left: 20px;
+        }
+
+        .flex-container {
+        }
+
+        .searched {
+            margin-top: 10vh;
+        }
+        .search-view {
+            background: #161415 url('assets/search-bg-lg.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .forecast-view {
+            background-image: url('assets/forecast-bg-lg.jpg');
+            background-attachment: fixed;
+        }
+
+        .notes {
+            font-size: 1em;
+        }
+
+        .description {
+            font-size: 0.9em;
+        }
+
+        #defs {
+            max-width: 50vw;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .attribution {
+            max-height: 200px;
+        }
+
+        .info-spacer {
+            height: 5vh;
+        }
     }
-}
 
