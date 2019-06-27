@@ -32,20 +32,20 @@ function Info() {
             <div id="defs">
                 <p className="definition">
                     <strong className="term">
-                        Moon Phase
-                    </strong>: You want to go when there isn't a moon out
+                        Lunar Phase
+                    </strong>: The Lunar phase is how visible the Moon is as viewed from Earth. The best time to go stargazing is during the New Moon. 
                 </p>
                 <p className="definition">
                     <strong className="term">
                         Visibility
                     </strong>
-                    : Average visibility in 10 miles
+                    : Average visibility in 10 miles.
                 </p>
                 <p className="definition">
                     <strong className="term">
                         Cloud Cover
                     </strong>
-                    : Percentage of the cloud covered by sky
+                    : Percentage of sky occluded by clouds. 
                 </p>
             </div>
         </div>

@@ -57,7 +57,7 @@ function Forecast({value}) {
             <tbody>
                 <tr>
                     <td className="title">
-                        Moon Phase
+                        Lunar Phase
                     </td>
                     <td className={moonStyle}>
                         {moonMessage}
