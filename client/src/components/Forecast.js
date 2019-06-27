@@ -1,11 +1,10 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import '../styles/Forecast.css';
 
 function convertDate(time) {
 
-    let  weekday = new Array("sunday", "monday", "tuesday", "wednesday",
-        "thursday", "friday", "saturday");
+    let  weekday = ["sunday", "monday", "tuesday", "wednesday",
+        "thursday", "friday", "saturday"];
 
     // unix timestamp from api is in seconds, Date function takes time in milliseconds
     let date = new Date(time * 1000);
@@ -21,8 +20,6 @@ function Forecast({value}) {
     let cloudStyle;
     let cloudMessage;
 
-    console.log(`moonphase: ${value.moonPhase}`);
-    // if statements are faster than switches
     if(value.moonPhase <= 0.09 || value.moonPhase >= 0.91) {
         moonStyle = "peak center-text"; moonMessage = "PEAK";
     }

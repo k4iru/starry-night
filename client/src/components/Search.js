@@ -1,8 +1,7 @@
-import React, { Component, Fragment }from 'react';
+import React, { Fragment }from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner';
-import Popover from 'react-bootstrap/Popover';
 import '../styles/Search.css';
 
 const list = 
@@ -102,12 +101,6 @@ class Search extends React.Component {
                 suggestionsListComponent = (
                     <ul className="suggestions">
                         {this.state.filteredSuggestions.map((suggestion, index) => {
-                            let className;
-
-                            if (index === this.state.activeSuggestion) {
-                                className = "suggestion-active";
-                            }
-
                             return (
                                 <li 
                                     className="suggestion-item"
