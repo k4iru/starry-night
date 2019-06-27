@@ -1,12 +1,16 @@
 require('dotenv').config()
 const api_helper = require('./API_helper');
+
+//obfuscate api key
 const key = process.env.DARK_SKY_SECRET;
 const darksky = 'https://api.darksky.net/forecast/';
 
+// api payload
 var testObject = {
     "data": []
 };
 
+// current supported locations
 const reserves = {
     "Torrance Barrens Dark Sky Preserve": "/49.9415,-79.5134",
     "McDonald Park": "/49.0504,-122.3045",
@@ -15,6 +19,7 @@ const reserves = {
     "Beaver Hills Dark Sky Preserve": "/41.3254,-72.9475"
 }
 
+// separate data into an array of dates
 const format = data => {
 
     let i;
@@ -22,9 +27,6 @@ const format = data => {
         testObject.data.push(data.daily.data[i]);
 
     }
-}
-const root = (req, res) => {
-    res.send('Hello World!');
 }
 
 const call = (req, res) => {
@@ -46,7 +48,6 @@ const call = (req, res) => {
 }
 
 module.exports = {
-    root,
     call,
 }
 

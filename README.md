@@ -3,4 +3,8 @@
 
 check it out at http://starry.kylecheung.ca/
 
-WIP so far only mobile is working 
+a simple web app for checking the conditions at dark zones for stargazing.
+
+## Technology used
+
+`React` * `Node` * `Express` * `Bootstrap` * `Heroku`
