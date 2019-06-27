@@ -21,27 +21,28 @@ function Forecast({value}) {
     let cloudStyle;
     let cloudMessage;
 
+    console.log(`moonphase: ${value.moonPhase}`);
     // if statements are faster than switches
-    if(value.moonPhase <= 0.05 || value.moonPhase >= 0.95) {
+    if(value.moonPhase <= 0.09 || value.moonPhase >= 0.91) {
         moonStyle = "peak center-text"; moonMessage = "PEAK";
     }
-    if(value.moonPhase <= 0.15 || value.moonPhase >= 0.85) {
+    else if(value.moonPhase <= 0.15 || value.moonPhase >= 0.85) {
         moonStyle = "good center-text"; moonMessage = "good";
     }
-    if(value.moonPhase <= 0.40 || value.moonPhase >= 0.60) {
+    else if(value.moonPhase <= 0.40 || value.moonPhase >= 0.60) {
         moonStyle = "poor center-text"; moonMessage = "poor";
     }
     else {moonStyle = "bad center-text"; moonMessage="BAD";
     }
 
-    if(value.visibility < 0.35) {visStyle = "bad center-text"; visMessage = "BAD";}
-    if(value.visibility < 0.65) {visStyle = "poor center-text"; visMessage = "poor";}
-    if(value.visibility < 0.85) {visStyle = "good center-text"; visMessage = "good";}
+    if(value.visibility < 0.50) {visStyle = "bad center-text"; visMessage = "BAD";}
+    else if(value.visibility < 0.70) {visStyle = "poor center-text"; visMessage = "poor";}
+    else if(value.visibility < 0.90) {visStyle = "good center-text"; visMessage = "good";}
     else {visStyle = "peak center-text"; visMessage="PEAK";}
 
     if(value.cloudCover < 0.10) {cloudStyle = "peak center-text"; cloudMessage = "PEAK";}
-    if(value.cloudCover < 0.30) {cloudStyle = "good center-text"; cloudMessage = "good";}
-    if(value.cloudCover < 0.75) {cloudStyle = "poor center-text"; cloudMessage = "poor";}
+    else if(value.cloudCover < 0.30) {cloudStyle = "good center-text"; cloudMessage = "good";}
+    else if(value.cloudCover < 0.50) {cloudStyle = "poor center-text"; cloudMessage = "poor";}
     else {cloudStyle = "bad center-text"; cloudMessage="BAD";}
 
     return (

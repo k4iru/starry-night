@@ -5,38 +5,49 @@ function Info() {
     return (
         <div>
             <p className="notes">How do I read this chart?</p>
-            <table className="info-table forecast">
+            <table className="forecast info-table">
                 <thead>
-                    <tr className="style">
-                        <th>Style</th>
-                        <th>Description</th>
-                    </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td className="peak center-text">PEAK</td>
-                        <td className="description">Top 10%. Conditions are really good, go Stargazing.</td>
+                        <td className="description">Top 10%. Conditions are amazing!</td>
                     </tr>
                     <tr>
                         <td className="good center-text">good</td>
-                        <td className="description">Top 20%-30%. Conditions are okay I guess.</td>
+                        <td className="description">Top 10%-30%. Should still be enjoyable.</td>
                     </tr>
- <tr>
+                    <tr>
                         <td className="poor center-text">poor</td>
-                        <td className="description">Top 30%-50%. Conditions are kinda bad, you may want to reschedule.</td>
+                        <td className="description">Top 30%-50%. You may want to reschedule.</td>
                     </tr>
- <tr>
+                    <tr>
                         <td className="bad center-text">BAD</td>
                         <td className="description">Bottom 50%. Don't even bother</td>
                     </tr>
 
                 </tbody>
             </table>
-            <p className="notes">A good way to think about it is like your GPA. Anything below a 90% is garbage. The best time to go is when all conditions are in PEAK.</p>
 
-            <p className="definition"><strong>Moon Phase</strong>: You want to go when there isn't a moon out</p>
-            <p className="definition"><strong>Visibility</strong>: Average visibility in 10 miles</p>
-            <p className="definition"><strong>Cloud Cover</strong>: Percentage of the cloud covered by sky</p>
+            <div id="defs">
+                <p className="definition">
+                    <strong className="term">
+                        Moon Phase
+                    </strong>: You want to go when there isn't a moon out
+                </p>
+                <p className="definition">
+                    <strong className="term">
+                        Visibility
+                    </strong>
+                    : Average visibility in 10 miles
+                </p>
+                <p className="definition">
+                    <strong className="term">
+                        Cloud Cover
+                    </strong>
+                    : Percentage of the cloud covered by sky
+                </p>
+            </div>
         </div>
 
     );
