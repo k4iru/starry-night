@@ -5,7 +5,7 @@ check it out at http://starry.kylecheung.ca/
 
 ## Description
 
-A full-stack web app for checking the conditions at dark zones for stargazing. Designed using a Mobile-First approach. Using data from [Dark Sky Api](https://darksky.net/dev) the backend formats and delivers a json object to the React client which is then rendered for the user.
+A full-stack web app for checking weather conditions at dark zones for stargazing. Designed using a Mobile-First approach. Using data from [Dark Sky Api](https://darksky.net/dev) the custom backend formats and delivers a json object to the React client which is then rendered for the user.
 
 ## Technology Used
 
