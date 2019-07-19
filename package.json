@@ -18,6 +18,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "http": "0.0.0",
+    "lodash": "^4.17.13",
+    "lodash.template": "^4.5.0",
     "pg": "^7.11.0",
     "querystringify": "^2.1.1",
     "request": "^2.88.0"
