@@ -1,11 +1,8 @@
 require('dotenv').config()
 const api_helper = require('./API_helper');
-
-//obfuscate api key
 const key = process.env.DARK_SKY_SECRET;
 const darksky = 'https://api.darksky.net/forecast/';
 
-// api payload
 var testObject = {
     "data": []
 };
@@ -31,16 +28,12 @@ const format = data => {
 
 const call = (req, res) => {
     var loc = req.query.location;
-    console.log(loc);
-    console.log(reserves[loc]);
     api_helper.make_API_call(`${darksky}${key}${reserves[loc]}`)
         .then(response => {
 
             testObject.data = []
             format(response)
             res.json(testObject)
-
-            //res.json(response)
         })
         .catch(error => {
             res.send(error)
