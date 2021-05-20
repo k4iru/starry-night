@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "client": "cd client && npm start",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "start": "node server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
@@ -22,6 +22,7 @@
     "http": "0.0.0",
     "lodash": "^4.17.13",
     "lodash.template": "^4.5.0",
+    "nodemon": "^2.0.7",
     "pg": "^7.11.0",
     "querystringify": "^2.1.1",
     "request": "^2.88.0"
