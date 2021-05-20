@@ -20,7 +20,7 @@
     "eslint-utils": "^1.4.1",
     "express": "^4.17.1",
     "http": "0.0.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "lodash.template": "^4.5.0",
     "nodemon": "^2.0.7",
     "pg": "^7.11.0",
