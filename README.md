@@ -1,11 +1,10 @@
-# Starry Night Web App
+# Discussion Board
 
-
-check it out at http://starry.kylecheung.ca/
+check it out at http://discussion.kylecheung.ca/
 
 ## Description
 
-A full-stack web app for checking weather conditions at dark zones for stargazing. Designed using a Mobile-First approach. Using data from [Dark Sky Api](https://darksky.net/dev) the custom backend formats and delivers a json object to the React client which is then rendered for the user.
+Discussion board implemented using PHP and MYSQL to manage content. Features user authentication 
 
 ## Technology Used
 
@@ -17,4 +16,4 @@ A full-stack web app for checking weather conditions at dark zones for stargazin
 
 ## Lessons Learned
 
-As my first full-stack application there was a lot of learning involved. However, I believe that the biggest challenge I had was actually deploying my product. Getting everything to work individually took some time, but deploying it and having everything working properly was super frustrating at the start. A lot of guides I tried to follow didn't fit exactly, this led to a lot of research to really learn how the backend, frontend, and webserver interact.  
+As my first full-stack application there was a lot of learning involved. However, I believe that the biggest challenge I had was actually deploying my product. Getting everything to work individually took some time, but deploying it and having everything working properly was super frustrating at the start. A lot of guides I tried to follow didn't fit exactly, this led to a lot of research to really learn how the backend, frontend, and web server interact. Another struggle I had was figuring out how to list all the Dark Sky Reserves I wanted. One choice was using googles api, however that would allow users to get astroweather data for any location. I decided instead to limit user options by enumerating a list of all the Dark Sky Reserves in Canda that users can pick from instead.
