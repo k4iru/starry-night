@@ -18,7 +18,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "eslint-utils": "^1.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http": "0.0.0",
     "lodash": "^4.17.13",
     "lodash.template": "^4.5.0",
